@@ -1,0 +1,152 @@
+# for single line comments we use hashtag in python
+
+'''
+
+Date : 9/12/2023
+
+Topic: IPO
+
+Author : Hesam Akbari
+
+
+multiple line comments in python starts with 3 single quotation and also close with one
+
+
+IT ----> how to collect the information
+
+
+'''
+
+
+# ------------------------------------ Variables ------------------------
+
+# its a memory allocation in RAM to store data temp.
+
+#  variables are dynamic (Variables are not variables in python)
+
+
+a = 4 # integer
+
+b = 3.4 # float
+
+c = True # 1 or 0
+
+d = "Hesam" # string
+
+print(a, b, sep="**", end="||")
+
+print(c, d)
+
+
+print(type(a))
+
+print(type(b))
+
+print(type(c))
+
+print(type(d))
+
+# string? I't a collection of characters in sequence
+
+# it identifies with single quotation or quotation
+
+# ALL THE INPUTS AND ALL THE OUTPUTS ARE IN FORM OF STRING
+
+age = 41
+
+name = 'Hesam'
+
+money = 12.45
+
+print()
+
+# how to generate output---------------------------------------------
+
+# I'm hesam and I am 40 years old and I have 12.45 dollars.
+
+print("I'm hesam and I am 40 years old and I have 12.45 dollars.")
+
+# formatting a string is something we need to learn 4 ways to print this message
+
+# method 1 multiple entry on print!
+
+print("I'm", name, "and I am", age, "years old and I have", money, "dollars.")
+
+# method 2
+
+print("I'm %s and I am %d years old and I have %.2f dollars." % (name, age, money))
+
+# method 3
+
+print("I'm {} and I am {} years old and I have {} dollars.".format(name, age, money))
+
+# method 4
+
+print(f"I'm {name} and I am {age} years old and I have {money} dollars.")
+
+
+#----------------------------Input------------------------------------------
+
+# variable manipulation
+
+a = 2
+
+b = 5
+
+c = '2'
+
+d = '5'
+
+
+print(a + b) # addition
+
+print(c + d) # concatenation
+
+#print(a + c) #   cannot +: 'int' and 'str'
+
+print(d * b)  # you can multiple string with integer in python
+
+# int() ---> convert to integer
+
+# float() ---> convert to float
+
+# str() ----> convert to string
+
+
+name = input('Enter your name : ')
+
+print(name)
+
+age = int(input(f'hello {name} Enter your age and I double it'))
+
+
+result = age * 2
+
+print('The result :', result)
+
+
+# 30 min break!
+
+
+
+# write a program which collect 3 integers and find the avg
+# assuming the user enter the right type of data
+# syntax error : when you are not following the programming language rules
+# naming of the variable?
+# 1) name the variable properly..
+# 2) no spaces --> 1) Pascal 2) camelCase 3) underscored
+# 3) no special character
+# 4) you cannot start with num
+# logical errors
+
+#num1 = input('Enter the first number :')
+num 1 = int(input("Enter the first number :"))
+num2 = int(input('Enter the second number :'))
+num3 = int(input('Enter the third number :'))
+# ()  %*%  +-
+avg = (num1 + num2 + num3) // 3
+print(f'the avg is {avg:.2f}')
+
+
+# running time error
+

@@ -1,0 +1,16 @@
+1, "Code", "Robert Martin", Yes
+2, "DisisSid", "Michael Sipser", No
+3, "Python", "Hesam Akbari", Yes
+4, "Design", "Erich Gamma", Yes
+5, "Program", "Andrew Hut", Yes
+6, "JavaScript", "Douglas", No
+7, "Java", "Joshua", Yes
+8, "Learning Python", "Mark Lutz", No
+9, "Algorithms", "Robert Sedgewick", Yes
+10, "C", "Dennis Ritchie", Yes
+11, "Haskell", "Shaurya", Yes
+12, "sid", "sid", Yes
+13, "sid", "disissid", Yes
+14, "Programming", "Cryston Heaven", Yes
+15, "Web Development", "Cryston Heaven", No
+16, "Database", "Rachida Amjoun", Yes

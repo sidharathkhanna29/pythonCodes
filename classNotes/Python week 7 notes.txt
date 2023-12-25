@@ -1,0 +1,103 @@
+"""
+List application : parallel lists, 2D lists (Tables)
+Dictionaries and set...
+
+Parallel lists : are lists which are the same size
+and each item in each list has a correlation with another
+item in another lists
+Students
+"""
+stdId = ['co789809', 'c0885600', 'c0987878']
+stdName = ['Hesam', 'Tony', 'Robert']
+# add += stdMarks[0][0] + stdMarks [1][0] + stdMarks [2][0]
+stdMarks = [[78, 45, 70, 80],
+            [74, 56, 80, 90],
+            [85, 95, 65, 100]]  # i like to keep the all the marks for all the students
+# find the followings! ---> first the avg of the class!
+# avg of each contents! (Avg quizzes, ass, test1, test2)
+stdfinalMarks = [] # this creates your intial array of @ 3
+contents = ['Quizzes', 'Assignments', 'Test 1', 'Test2'] # 4
+weight = [0.15, 0.35, 0.20, 0.30] # 4
+# how do I calculate the final mark for each students
+# print('Test 1 for hesam ', stdMarks[0][2])
+sumFinalMarks = 0
+for i in range(len(stdId)) : #[0,1,2]
+    print(f'ID {stdId[i]}, Name : {stdName[i]}')
+    print('---------------------------------------------')
+    finalMark = 0
+    for j in range(len(contents)):
+        print(f'{contents[j]} = {stdMarks[i][j]}')
+        finalMark += weight[j] * stdMarks[i][j]
+
+    print(f'Final Mark : {finalMark:.2f}')
+    sumFinalMarks += finalMark
+    stdfinalMarks.append(finalMark)
+    print('"=====================================')
+
+print(f'The class Avg is {sumFinalMarks/ len(stdId) :.2f}')
+# we pick col first then change the row
+for j in range(len(contents)):
+    add = 0
+    for i in range(len(stdId)):
+        add += stdMarks[i][j]
+
+    print(f'Avg of {contents[j]} : {add/len(stdId):.2f}')
+
+# sets are data structure which has no redundanices and no sequence
+
+aset1 = {3, 4, 5, 2, 2, 2, 3, 3, 5}
+print(aset1)
+aset2 = {4, 4, 5, 66, 6, 7, 7}
+print(aset2)
+print(aset1.intersection(aset2))
+
+# dictionaries : its a data structure which you keep the each item in pairs key : value
+# key is 1 and value is my name (the key must be unique
+adict = {1: "Hesam", 2 :"Hesam", '1' : 3, True : 20}
+print(adict)
+
+std = {"ID" : "C0777777", "name": "Hesam", "marks" : [56, 67, 78, 100]}
+print(std)
+print(std["marks"])
+std['age'] = 26
+print(std)
+std['avg'] = sum(std['marks']) / len(std['marks'])
+print(std)
+
+print(std.get('avg')) # std ['avg']
+print(std.items())
+alistTuple = [(3,4), (5,6), ('4',6)]
+print(alistTuple)
+a = dict(alistTuple)
+print(a)
+print(a.pop(5)) # pop remove and return a value with the key! key is required
+print(a)
+print(a.popitem()) # remove and return the last pairs
+print(a)
+
+x = {'ID': 'C0777777', 'name': 'Hesam', 'marks': [56, 67, 78, 100], 'avg': 75.25}
+print('---------------------------------------------')
+for key,value in x.items(): print(key, "---->",value)
+# I like to write above program using dictionary
+listStudent = [] # contain dict of each students
+# {'ID': 'C0777777', 'name': 'Hesam', 'marks': [56, 67, 78, 100], 'avg': 75.25}
+nStd = int(input('Enter the number of students : '))
+
+for i in range(nStd):
+    ID = input(f'Enter th ID for student # {i+1} : ')
+    name = input(f'Enter th name for student # {i+1} : ')
+    mark = []
+    for j in range(len(contents)):
+        mark.append(int(input(f'Enter the mark of student # {i+1} {contents[j]}')))
+
+    listStudent.append(dict([('ID', ID), ('name', name), ('Marks', mark), ('avg', sum(mark)/len(mark))]))
+
+
+
+for student in listStudent:
+    for key,value in student.items():
+        if key == 'Marks':
+            for i in range(len(value)):
+                print(contents[i]," = ", value[i])
+        else:
+            print(key, ": ", value)

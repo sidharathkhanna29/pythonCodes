@@ -1,0 +1,167 @@
+"""
+Date Sep 26 2023
+Loops (Repetition Structures)
+Functions
+Use of API in python (Libraries)
+
+Repetition Structures :
+1) Condition Controls (while loop) ---> when you don't know how many times
+you repeat something
+2) Count Controls ---> When you do know how many times you repeat something
+
+for ---> iterators ----> through something itables
+
+"""
+
+x = 5
+y = 3
+
+while x > y:
+    print('Hello everyone')
+    y += 1
+
+i = 0
+while i < 5:
+    i += 1
+
+# for ( int i = 0 ; i < 5 ; i ++ )
+
+# what is an iterables?
+# are objects (Its a complex data structure) which is in sequence
+# iterators (for each)
+name = "Hesam" # string
+alist = [1, 2, 3, 4] # alist
+# index
+for ch in name:
+    print(ch)
+
+for number in alist:
+    print(number)
+
+# if you want to repeat something 5 times
+# range() ----> creates a range of numbers
+# range(start = 0, stop, step = 1)
+# start of a range is inclusive and stop is exclusive
+for i in range(5):  # [0,1,2,3,4]
+    print('H', i)
+
+for i in range(1, 7):  # [1,2,3,4,5,6]
+    print('A', i)
+
+for i in range(100,-10,-10):  # [100, 90, 80,70,60,50,40,30,20,10,0]
+    print('B', i)
+
+# Functions (Modules) ---------------------------
+# managing your code in python may be challenging.
+# code org. its not easy!
+# Modularization which help you manage your code better
+# team work.... and debug your code more efficiently.
+# functions are 2 types : 1) pre-defined 2) self-defined
+# in order to use function or modules you have to call them
+
+def message():
+    print('Hesam')
+    print('Hello!')
+
+
+print('A')
+message()
+print('B')
+
+# local vs global variable?
+# local variables are available only with in the function
+# if local variable is not exist, function try to reach globally!
+# can I make a local variable globally accessable
+value = 2
+def double_value():
+    # global value
+    value = 5
+    print(value, end= " ")
+    result = value * 2
+    print(result, end = " ")
+
+print(value, end = ' ')
+double_value()
+print(value, end = ' ')
+print()
+
+# -------------------------- Menu driven programming---------
+# Game ( 3 options --> guessing)
+
+def menu():
+    print('-----------Guessing Game---------')
+    print('1 - Single Players ')
+    print('2 - two players ')
+    print('3 - two players (simultaneously)')
+    print('4 - Exit the game')
+    return input('Enter 1,2,3,4 : ')
+import random
+def singlePlayer():
+    rand_number = random.randint(1, 100) # generate a random integer
+    counter = 0
+    while True:
+        user_input = int(input('Enter a number b/w 1 to 100: '))
+        counter += 1
+        if rand_number > user_input:
+            print('guess something bigger!')
+        elif rand_number < user_input:
+            print('guess something smaller!')
+        else:
+            print(f'game is over! it took you {counter} time to guess!')
+            return counter
+
+def twoPlayer():
+    p1Name = input('Enter player 1 name :')
+    p2Name = input('Enter player 2 name :')
+    print(p1Name, 'start first!')
+    p1Score = singlePlayer()
+    print(p2Name, 'start now!')
+    p2Score = singlePlayer()
+    if p1Score > p2Score:
+        print(f'{p2Name} Won the game!')
+    elif p2Score > p1Score:
+        print(f'{p1Name} Won the game!')
+    else:
+        print('Its a tie!')
+
+
+def twoPlayerS():
+    # keep track of turns
+    p1Name = input('Enter player 1 name :')
+    p2Name = input('Enter player 2 name :')
+    if random.randint(0,1):
+        turn = p1Name
+    else:
+        turn = p2Name
+    rand_number = random.randint(1, 100)
+    while True:
+        print(turn, 'is your turn!')
+        user_input = int(input('Enter a number b/w 1 to 100: '))
+
+        if rand_number > user_input:
+            print('guess something bigger!')
+        elif rand_number < user_input:
+            print('guess something smaller!')
+        else:
+            print(f'game is over!')
+            print('the winner is', turn)
+            break
+        # how do I change the turn?
+        if turn == p1Name: turn = p2Name
+        else : turn = p1Name
+
+
+def main():
+    print(' welcome to the guessing game!')
+    while True:
+        choice = menu()
+        if choice == '1': singlePlayer()
+        elif choice == '2': twoPlayer()
+        elif choice == '3' : twoPlayerS()
+        elif choice == '4':
+            print('Exiting...')
+            break # break out of the loop!
+        else:
+            print('Invalid input! you must enter 1,2,3 or 4')
+
+main()

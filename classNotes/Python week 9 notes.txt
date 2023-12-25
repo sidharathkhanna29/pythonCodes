@@ -1,0 +1,89 @@
+"""
+Data Structure : collection of data that have correlation with each other
+1) String : collection of character in sequence immutable
+2) list : collection of items in sequence (dynamic), mutable
+3) tuple : its an immutable list (data integrity)
+4) sets : collection of items , no sequence , no redundacies
+5) dictionaries : a set with items stored in pairs (key:value)
+key must be unique...
+6) Classes (Object oriented capabilities!) ---> modeling your data
+Classes? ----> its a blueprint (Model) of an object or instance
+Object in realworld ----> has physical entity (Tangible)
+1) Names : Monitor
+2) Properties : size, brand, price...
+3) functionality (behavior) : On() Off()
+
+Name : BankAccount
+Properties : balance, acc_holder, type,
+functionalities : deposit() withdraw() , ...
+
+UML ---> Unifing Modeling Language
+
+Classes extend from a helper class called Object!
+"""
+
+class Monitor :
+    def __init__(self, size, brand ="Generic", price = 0):
+        self.size = size
+        self.brand = brand
+        self.price = price
+
+    def __str__(self):
+        return (f'Monitor brand : {self.brand}, size : {self.size}, '
+                f'price : {self.price}')
+
+m4 = Monitor(20)
+print(m4)
+m3 = Monitor(15, "Dell", 700)
+print(m3)
+# constructor is a function which construct an object from the class
+# self keyword refer the object in python
+# by default pass that object to a dunder method __init__() for
+# initialization
+m1 = Monitor(15, "LG", 1200) # what this function is?
+m2 = Monitor(17, "Samsung", 1500)
+
+print(m1) # it will call __str__()
+print(m1.__str__()) # __str__() return a string representation of Object
+print(m2)
+print(f'Monitor brand : {m1.brand}, size : {m1.size}, price : {m1.price}')
+print(f'Monitor brand : {m2.brand}, size : {m2.size}, price : {m2.price}')
+
+"""
+Name : BankAccount
+Properties : balance, acc_holder, type,
+functionalities : deposit() withdraw() , ...
+
+Data privacy : Accessibility of parameters in python classes
+public : accessible everywhere! (default)
+private : accessible only within the class __
+protected : accessible within class which has relation with each other!_ 
+"""
+class BankAccount :
+    
+    def __init__(self, acc_holder, type, balance):
+        self.__acc_holder = acc_holder
+        self.__type = type
+        self.__balance = balance
+
+    def __str__(self):
+        return (f'Bank Account : {self.__type}, Name : {self.__acc_holder}'
+                f', Balance : {self.__balance}')
+    # apply business logic!
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def widthraw(self, amount):
+        if amount >= self.__balance:
+            print("Insufficient fund")
+        else:
+            self.__balance -= amount
+
+acc1 = BankAccount("Tony", "saving", 1000)
+print(acc1)
+acc1.__acc_holder = "Hesam"
+acc1.__balance = 1000000
+print(acc1)
+print(acc1.__balance)
+
+# --------------------------- 10: 30

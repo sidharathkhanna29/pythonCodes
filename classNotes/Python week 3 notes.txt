@@ -1,0 +1,143 @@
+
+"""
+structural programming in python
+*** Decision structure
+*** boolean expression
+*** rational expression
+*** functions that generate booleans
+*** combine boolean express
+*** how we can use those to make decision
+x > y x >= y, x <y ,x <=y, x == y, x != y
+
+Decision structures (3)
+1) Single decision structure (AKA if statement)
+if boolean_exp:
+    statements
+    statements
+    ect
+
+2) Dual alternative decision structure (AKA if-else statment)
+if boolean_exp:
+    statements
+    statements
+    ect
+else:
+    statement
+    statements
+    etc
+
+3) Nested Decision structure (AKA if-else-then)
+
+if boolean_exp:
+    statements
+    statements
+    etc
+else:
+    if boolean_exp:
+        statements
+        statments
+        etc
+    else:
+        if boolean_exp:
+            statements
+            statements
+            etc
+        else:
+            statements
+            statements
+            etc
+
+Alternative way (Multiple decision)
+
+if boolean_exp:
+    statements
+    statements
+    etc
+elif boolean_exp:
+    statements
+    statments
+    etc
+elsif boolean_exp:
+    statements
+    statements
+    etc
+else:
+    statements
+    statements
+    etc
+
+
+"""
+x = 5
+y = 2
+
+if x == y :
+    print(x , ' is the same as ', y)
+elif x < y :
+    print(x, 'is smaller than ',  y)
+else:
+    print(y, 'is smaller than ',  x)
+
+
+print('hesam')
+
+#
+'''
+while True:
+    num1 = input("Enter the first number: ")
+    if num1.isdigit():
+        num1 = int(num1) # conveting the type
+        num2 = input('Enter the second number :')
+
+        if num2.isdigit():
+            num2 = int(num2)
+            num3 = input('Enter the third number')
+            if num3.isdigit():
+                num3 = int(num3)
+                # ---------process---------
+                add = num1 + num2 + num3
+                avg = add / 3
+                print(f' the sum {num1}, {num2}, {num3} is {add}')
+                print(f'avg is {avg}')
+                break
+
+            else:
+                print(f' {num3} is not a digit')
+                print('run the program again')
+        else:
+            print(f'{num2} is not a digit!')
+            print('run the program again')
+
+    else:
+        print(f'{num1} is not a digit')
+        print('run the program again')
+'''
+
+# I like to write a program to indicate a student is eligible to join a college
+# finished highschool, english 6, visa?
+e1 = True
+e2 = True
+print(e1 and e2)
+print(e1 or e2)
+
+print('output', bool(None))
+highSchoolStatus = input('did you graduate high school (yes/no) : ')
+# exp_1  and exp_2 ---->
+if highSchoolStatus != "yes":
+    print('you have to finish high school first')
+else:
+    print('your high school status is satisfactory')
+    english_score = int(input('Enter your english score (IELTS) : '))
+    if english_score < 6:
+        print('you english score has to be at least 6 overall')
+    else :
+        print('you meet the english requirements')
+        visa_status = input('is your visa granted : ')
+        if visa_status != 'yes':
+            print('you have to have a visa to join in person!')
+        else:
+            print('your visa status is satisfactory!')
+            print('welcome to college')
+
+!QAQA
+and english_score < 6 and visa_status != 'yes':
